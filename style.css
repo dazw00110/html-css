@@ -1,0 +1,371 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* obliczanie szerokosci z paddingami, borderami... */
+  text-align: center;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6; /* wieksza wielkosc linii */
+  color: #333;
+  overflow-x: hidden; /* co sie dzieje z zawartoscia gdy przekracza szerokosc */
+}
+
+.container {
+  width: 95%;
+  margin: auto;
+}
+
+/* Header */
+.header {
+  background: #2e8b57;
+  color: white;
+  padding: 1rem 0; /* padding w pionie 1 w poziomie 0 */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.brand-name {
+  font-family: "Cinzel", serif; /* Elegancka czcionka przypominająca średniowieczny styl */
+  font-size: 4rem;
+  font-weight: bolder;
+  color: #ff9800;
+  font-style: italic;
+  text-align: center;
+}
+
+.nav {
+  background: #2e8b57;
+  color: white;
+  font-size: 2rem;
+  padding: 1rem 0; /* 1rem w pionie, 0 w poziomie */
+  position: sticky; /* Sprawia, że menu będzie sticky */
+  top: 0px;
+}
+
+.nav ul {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+}
+
+.nav ul li {
+  display: inline;
+  margin: 0 1rem;
+}
+
+.nav ul li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav ul li a:hover {
+  color: #ff9800;
+}
+
+/* HOME Section */
+.home {
+  background: url("img/main.jpg") no-repeat center center/cover;
+  background-attachment: auto;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.home-content {
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 24px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.home-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  animation: fadeIn 1.5s ease-out;
+}
+
+.home-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  animation: fadeIn 1.5s ease-out;
+}
+
+.home-content .btn {
+  padding: 0.8rem 1.5rem;
+  background: #ff9800;
+  color: white;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  animation: fadeIn 2s ease-out;
+}
+
+.home-content .btn:hover {
+  background: #e67e22;
+}
+
+/* About Section */
+.about {
+  padding: 2rem 1rem;
+  background: #f9f9f9;
+}
+
+.about p {
+  font-size: 1, 5rem;
+}
+
+.features {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.feature {
+  border: #ff9800 2px solid;
+  flex: 1 1 calc(33% - 1rem); /* elemnty w kontenerze beda powiekszaly sie i kurczyly jednakowo, domyslnie elemnt w kontenerze ma zajmowac 33% obszaru kontenera - 1rem*/
+  padding: 1.5rem;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  opacity: 1;
+  transform: translateY(50px);
+  transition: all 0.5s ease;
+}
+
+.feature:hover {
+  background: #ff9800;
+  color: white;
+}
+
+.about .feature.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Services Section */
+.services {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.service-cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 10px;
+}
+
+.card {
+  box-sizing: border-box;
+  border: #2e8b57 solid 2px;
+  flex: 1 1 calc(30% - 1rem);
+  padding: 1.5rem;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card details {
+  background-color: #2e8b57;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  background: #2e8b57;
+}
+
+.card summary:hover {
+  background-color: white;
+}
+
+/* Review Section */
+.reviews {
+  padding: 2rem 1rem;
+  background: #f4f4f4;
+}
+
+.review {
+  margin: 1rem 0;
+  text-align: center;
+  font-style: italic;
+}
+
+/* Gallery Section */
+.gallery {
+  padding: 2rem 1rem;
+  background: white;
+}
+
+.gallery .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 10px;
+  transition: all 0.5s ease; /* Zachowujemy animację powiększenia */
+}
+
+.gallery img:hover {
+  transform: scale(1.05); /* Powiększenie obrazu przy najechaniu */
+}
+
+/* Contact Section */
+.contact {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact-form button {
+  padding: 0.8rem;
+  background: #2e8b57;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #555;
+}
+
+/* Footer */
+.footer {
+  background: #2e8b57;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.footer p {
+  margin: 0;
+}
+
+/* Animacje */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+  .features {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Contact Section */
+.contact {
+  padding: 3rem 0;
+  background-color: #f4f4f4;
+}
+
+.contact h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.contact-info {
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.contact-info p {
+  margin: 1rem 0;
+}
+
+.contact-info a {
+  color: #2e8b57;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+/* Tabela z cennikiem */
+.pricing-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.pricing-table th,
+.pricing-table td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.pricing-table th {
+  background-color: #2e8b57;
+  color: white;
+}
+
+.card details {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+
+.card details summary {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.card details ul {
+  list-style: none;
+  margin-top: 10px;
+  padding-left: 0;
+}
+
+.card details li {
+  margin-bottom: 5px;
+}
