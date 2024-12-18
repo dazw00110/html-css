@@ -23,9 +23,8 @@ body {
   background: #2e8b57;
   color: white;
   padding: 1rem 0; /* padding w pionie 1 w poziomie 0 */
-  position: sticky;
+  position: relative;
   top: 0;
-  z-index: 1000;
 }
 
 .brand-name {
